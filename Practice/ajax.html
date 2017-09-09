@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Single AJAX</title>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  
+    // constructing a queryURL variable we will use instead of the literal string inside of the ajax method
+    var name = "";
+    var queryURL = "https://developers.zomato.com/api/v2.1/categories&apikey=c469b6e4c6d0a1aa1cf1240ea9004bfd";
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).done(function(response) {
+      console.log(response);
+      console.log(response.Runtime);
+    });
+// ---------------------------------------------------------
+    console.log("This console.log will probably happen first because of asynchronicity.");
+    var italian = true;
+    var mexican = true;
+    var japanse = true;
+    console.log();
+  </script>
+</body>
+</html>

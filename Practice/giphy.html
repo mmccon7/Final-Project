@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Giphy API</title>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  <script type="text/javascript">
+    // Example queryURL for Giphy API
+    var queryURL = "http://developers.zomato.com/api/v2.1/categories?api_key=c469b6e4c6d0a1aa1cf1240ea9004bfd";
+    
+
+    $.ajax({
+      url: queryURL,
+      method: 'GET'
+    }).done(function(response) {
+      console.log(response);
+    });
+  </script>
+</body>
