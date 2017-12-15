@@ -1,2 +1,0 @@
-# groupProject
-Hilton, James, Cody

@@ -1,0 +1,19 @@
+{
+  "name": "Advance",
+  "version": "1.0.0",
+  "description": "",
+  "main": "catsanddogs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "require": "^2.4.20"
+  }
+}

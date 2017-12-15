@@ -1,0 +1,58 @@
+body {
+	background-color: #F5F5DC;
+}
+
+nav {
+	background-color: green;
+	height:100px;
+}
+
+img {
+	height: 60px;
+	width: 60px;
+	margin: 5px;
+
+	margin-left: 5px;
+
+	border: solid 2px black;
+}
+
+.silo{
+	width:80%;
+	height:300px;
+	background-color: white;
+
+	right:15px;
+}
+
+
+
+.info{
+	width:100%;
+	height:auto;
+
+	margin: 10px;
+
+	float:left;
+	background-color: #F5F5DC;
+}
+
+h5{
+	color:black;
+	margin:7px;
+}
+
+p{
+	color:blue;
+	margin:7px;
+}
+
+ 
+.row img:hover {
+	opacity: .7;
+	z-index: 1;
+	
+}
+
+
+
