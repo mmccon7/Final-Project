@@ -1,25 +1,29 @@
-var path = require('path');
-var bodyParser = require('body-parser');
-var express = require('express');
-var webpack = require('webpack');
-var config = require('./webpack.config.dev.js');
-var app = express();
-var compiler = webpack(config);
+const express = require("express");
+const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
+const routes = require("./routes");
+const app = express();
+const PORT = process.env.PORT || 3001;
+
+// Configure body parser for AJAX requests
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
-}));
-app.use(require('webpack-hot-middleware')(compiler));
-app.use('/public', express.static('public'));
-app.get('*', function(req, res) {
-  res.sendFile(path.resolve(__dirname, 'index.html'));
-});
-app.listen(process.env.PORT || 5000, function(err) {
-  if (err) {
-    console.log(err);
-    return;
+// Serve up static assets
+app.use(express.static("client/build"));
+// Add routes, both API and view
+app.use(routes);
+
+// Set up promises with mongoose
+mongoose.Promise = global.Promise;
+// Connect to the Mongo DB
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist",
+  {
+    useMongoClient: true
   }
-console.log('Listening at http://localhost:5000');
+);
+
+// Start the API server
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
