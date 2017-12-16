@@ -1,6 +1,10 @@
 {
   "name": "final-project",
   "version": "1.0.0",
+<<<<<<< HEAD
+=======
+  "description": "Test",
+>>>>>>> a187d3495671f0d09e12175943c1975c484de805
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -9,12 +13,16 @@
     "type": "git",
     "url": "git+https://github.com/mmccon7/Final-Project.git"
   },
+<<<<<<< HEAD
   "keywords": [],
+=======
+>>>>>>> a187d3495671f0d09e12175943c1975c484de805
   "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mmccon7/Final-Project/issues"
   },
+<<<<<<< HEAD
   "homepage": "https://github.com/mmccon7/Final-Project#readme",
   "description": "",
   "dependencies": {
@@ -23,4 +31,7 @@
     "babel-preset-env": "^1.6.1",
     "express": "^4.16.2"
   }
+=======
+  "homepage": "https://github.com/mmccon7/Final-Project#readme"
+>>>>>>> a187d3495671f0d09e12175943c1975c484de805
 }
