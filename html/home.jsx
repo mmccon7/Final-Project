@@ -96,6 +96,7 @@ class AddPost extends React.Component {
     }
     render() {
       return (
+        
         <div className="col-md-5">
           <div className="form-area">  
               <form role="form">
