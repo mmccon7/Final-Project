@@ -40,6 +40,7 @@ class Signin extends React.Component {
           <div className="container">
             <div className="jumbotron text-center">
               <h1>MedGram</h1>
+              <img src="/images/logo.png" alt="MedGram"/>
               <h2>Connect with those who understand</h2>
             </div>
           </div>
@@ -102,6 +103,7 @@ class Signup extends React.Component{
           <div className="container">
             <div className="jumbotron text-center">
               <h1>MedGram</h1>
+              <img src="/images/logo.png" alt="MedGram"/>
               <h2>Connect with those who understand</h2>
             </div>
           </div>

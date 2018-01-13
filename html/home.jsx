@@ -102,11 +102,11 @@ class AddPost extends React.Component {
               <form role="form">
                 <br styles="clear:both" />
                 <div className="form-group">
-                  <input value={this.state.title} type="text" onChange={this.handleTitleChange} className="form-control" id="title" name="title" placeholder="Title" required />
+                  <input value={this.state.title} type="text" onChange={this.handleTitleChange} className="form-control" id="title" name="title" placeholder="How are you feeling today?" required />
                 </div>
                
                 <div className="form-group">
-                  <textarea value={this.state.subject} className="form-control" onChange={this.handleSubjectChange} type="textarea" id="subject" placeholder="Subject" maxlength="140" rows="7"></textarea>
+                  <textarea value={this.state.subject} className="form-control" onChange={this.handleSubjectChange} type="textarea" id="subject" placeholder="Your post here..." maxlength="140" rows="7"></textarea>
                 </div>
 
                 <div className="form-group">
@@ -123,6 +123,8 @@ class AddPost extends React.Component {
                   
                 <button type="button" onClick={this.addPost} id="submit" name="submit" className="btn btn-primary pull-right">Add Post</button>
               </form>
+              <br/>
+              <br/>
           </div>
         </div>
       )
@@ -322,34 +324,28 @@ class ShowPost extends React.Component {
     render() {
 
       return(
-          <table className="table table-striped">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Title</th>
-                <th>Subject</th>
-                <th></th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
+          <div>
               {
                 this.state.posts.map(function(post,index) {
-                   return <tr key={index} >
-                            <td>{index+1}</td>
-                            <td>{post.title}</td>
-                            <td>{post.subject}</td>
-                            <td>
-                              <span onClick={this.updatePost.bind(this,post._id)} className="glyphicon glyphicon-pencil"></span>
-                            </td>
-                            <td>
-                              <span onClick={this.deletePost.bind(this,post._id)} className="glyphicon glyphicon-remove"></span>
-                            </td>
-                          </tr>
+                   return <div className="row" key={index}>
+                            <div className="col-sm-3">
+                                <div className="well">
+                                    <p>Kenny Johnson</p>
+                                    <img src="https://thumbs.dreamstime.com/b/cute-color-vector-illustration-beard-afro-black-guy-face-avatar-positive-young-black-guy-smiling-87383651.jpg " className="img-circle" height="65" width="65" alt="Avatar"/>
+                                    <p><strong>{post.title}</strong></p>
+                                </div>
+                            </div>
+                            <div className="col-sm-9">
+                                <div className="well">
+                                    <p>{post.subject}</p>
+                                    <button onClick={this.updatePost.bind(this,post._id)} className="glyphicon glyphicon-pencil btn-primary"></button>
+                                    <button onClick={this.deletePost.bind(this,post._id)} className="glyphicon glyphicon-remove btn-danger"></button>
+                                </div>
+                            </div>
+                          </div>
                 }.bind(this))
               }
-            </tbody>
-          </table>
+           </div>
         )
     }
 }
